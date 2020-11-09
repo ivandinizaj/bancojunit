@@ -87,7 +87,7 @@ public class GerenciadoraClientesTest {
     @ValueSource(ints = {18, 25, 65})
     public void testClienteIdadeAceitavel(int idade) throws IdadeNaoPermitidaException {
         /* ========== Montagem do Cenário ========== */
-        Cliente cliente = new Cliente(1, "Gustavo", idade, "guga@gmail.com", 1, true);
+        Cliente cliente = new Cliente(3, "Fulano Cicrano", idade, "fulano@emailnaoexiste.com", 3, true);
 
         /* ========== Execução ========== */
         boolean idadeValida = gerClientes.validaIdade(cliente.getIdade());
