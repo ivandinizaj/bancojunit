@@ -101,7 +101,7 @@ public class GerenciadoraClientesTest {
     @ValueSource(ints = {10, 17, 66})
     public void testClienteIdadeInaceitavel(int idade) {
         /* ========== Montagem do Cenário ========== */
-        Cliente cliente = new Cliente(1, "Gustavo", idade, "guga@gmail.com", 1, true);
+        Cliente cliente = new Cliente(3, "Fulano Cicrano", idade, "fulano@emailnaoexiste.com", 3, true);
 
         /* ========== Execução ========== */
         try {
