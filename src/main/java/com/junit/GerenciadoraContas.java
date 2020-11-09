@@ -3,7 +3,7 @@ package com.junit;
 import java.util.List;
 
 /**
- * Classe de neg�cio para realizar opera��es sobre as contas do banco.
+ * Classe de negócio para realizar operações sobre as contas do banco.
  * @author Gustavo Farias
  */
 public class GerenciadoraContas {
@@ -37,7 +37,7 @@ public class GerenciadoraContas {
 	}
 	
 	/**
-	 * Adiciona uma nova conta � lista de contas do banco.
+	 * Adiciona uma nova conta é lista de contas do banco.
 	 * @param novaConta nova conta a ser adicionada
 	 */
 	public void adicionaConta (ContaCorrente novaConta) {
@@ -65,9 +65,9 @@ public class GerenciadoraContas {
 	}
 
 	/**
-	 * Informa se uma determinada conta est� ativa ou n�o.
-	 * @param idConta ID da conta cujo status ser� verificado
-	 * @return true se a conta est� ativa. False, caso contr�rio. 
+	 * Informa se uma determinada conta está ativa ou não.
+	 * @param idConta ID da conta cujo status será verificado
+	 * @return true se a conta está ativa. False, caso contrário.
 	 */
 	public boolean contaAtiva (int idConta) {
 		
@@ -87,12 +87,12 @@ public class GerenciadoraContas {
 	
 	/**
 	 * Transfere um determinado valor de uma conta Origem para uma conta Destino.
-	 * Caso n�o haja saldo suficiente, o valor n�o ser� transferido.
+	 * Caso n�o haja saldo suficiente, o valor não será transferido.
 	 * 
-	 * @param idContaOrigem conta que ter� o valor deduzido
+	 * @param idContaOrigem conta que terá o valor deduzido
 	 * @param valor valor a ser transferido
-	 * @param idContaDestino conta que ter� o valor acrescido
-	 * @return true, se a transfer�ncia foi realizada com sucesso.
+	 * @param idContaDestino conta que terá o valor acrescido
+	 * @return true, se a transferência foi realizada com sucesso.
 	 */
 	public boolean transfereValor (int idContaOrigem, double valor, int idContaDestino) {
 		

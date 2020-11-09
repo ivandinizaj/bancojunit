@@ -2,12 +2,15 @@ package com.junit;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
+@DisplayName("Gerenciadora de Clientes")
 public class GerenciadoraClientesTest_Ex3 {
 
 	private GerenciadoraClientes gerClientes;
@@ -15,7 +18,7 @@ public class GerenciadoraClientesTest_Ex3 {
 	@Test
 	public void testPesquisaCliente() {
 
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		Cliente cliente01 = new Cliente(1, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
@@ -28,18 +31,19 @@ public class GerenciadoraClientesTest_Ex3 {
 		
 		gerClientes = new GerenciadoraClientes(clientesDoBanco);
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		Cliente cliente = gerClientes.pesquisaCliente(1);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(cliente.getId(), is(1));
 		
 	}
 	
+	@DisplayName("Teste Remove Cliente")
 	@Test
 	public void testRemoveCliente() {
 
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		Cliente cliente01 = new Cliente(1, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
@@ -52,14 +56,13 @@ public class GerenciadoraClientesTest_Ex3 {
 		
 		gerClientes = new GerenciadoraClientes(clientesDoBanco);
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean clienteRemovido = gerClientes.removeCliente(2);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(clienteRemovido, is(true));
 		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
 		assertNull(gerClientes.pesquisaCliente(2));
-		
 	}
-	
+
 }

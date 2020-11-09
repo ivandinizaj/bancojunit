@@ -3,7 +3,7 @@ package com.junit;
 import java.util.List;
 
 /**
- * Classe de neg�cio para realizar opera��es sobre os clientes do banco.
+ * Classe de negócio para realizar operações sobre os clientes do banco.
  * @author Gustavo Farias
  */
 public class GerenciadoraClientes {
@@ -25,7 +25,7 @@ public class GerenciadoraClientes {
 	/**
 	 * Pesquisa por um cliente a partir do seu ID.
 	 * @param idCliente id do cliente a ser pesquisado
-	 * @return o cliente pesquisado ou null, caso n�o seja encontrado
+	 * @return o cliente pesquisado ou null, caso não seja encontrado
 	 */
 	public Cliente pesquisaCliente (int idCliente) {
 
@@ -37,7 +37,7 @@ public class GerenciadoraClientes {
 	}
 	
 	/**
-	 * Adiciona um novo cliente � lista de clientes do banco.
+	 * Adiciona um novo cliente é lista de clientes do banco.
 	 * @param novoCliente novo cliente a ser adicionado
 	 */
 	public void adicionaCliente (Cliente novoCliente) {
@@ -65,13 +65,13 @@ public class GerenciadoraClientes {
 	}
 
 	/**
-	 * Informa se um determinado cliente est� ativo ou n�o.
+	 * Informa se um determinado cliente está ativo ou não.
 	 * @param idCliente ID do cliente cujo status ser� verificado
-	 * @return true se o cliente est� ativo. False, caso contr�rio. 
+	 * @return true se o cliente está ativo. False, caso contrário.
 	 */
 	public boolean clienteAtivo (int idCliente) {
 		boolean clienteAtivo = false;
-		
+
 		for (int i = 0; i < clientesDoBanco.size(); i++) {
 			Cliente cliente = clientesDoBanco.get(i);
 			if(cliente.getId() == idCliente)

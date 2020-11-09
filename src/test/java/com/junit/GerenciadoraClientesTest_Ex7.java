@@ -2,6 +2,7 @@ package com.junit;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +51,7 @@ public class GerenciadoraClientesTest_Ex7 {
 	}
 	
 	/**
-	 * Teste b�sico da pesquisa de um cliente a partir do seu ID.
+	 * Teste básico da pesquisa de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -58,10 +59,10 @@ public class GerenciadoraClientesTest_Ex7 {
 	@Test
 	public void testPesquisaCliente() {
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificacões ========== */
 		assertThat(cliente.getId(), is(idCLiente01));
 		
 	}
@@ -75,10 +76,10 @@ public class GerenciadoraClientesTest_Ex7 {
 	@Test
 	public void testRemoveCliente() {
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean clienteRemovido = gerClientes.removeCliente(idCLiente02);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(clienteRemovido, is(true));
 		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
 		assertNull(gerClientes.pesquisaCliente(idCLiente02));

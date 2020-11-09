@@ -1,16 +1,17 @@
 package com.junit;
 
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.CoreMatchers.*;
+import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class GerenciadoraClientesTest_Ex1 {
 
 	@Test
+	@DisplayName("Pesquisa cliente pelo ID")
 	public void testPesquisaCliente() {
 
 		// criando alguns clientes
@@ -25,9 +26,9 @@ public class GerenciadoraClientesTest_Ex1 {
 		GerenciadoraClientes gerClientes = new GerenciadoraClientes(clientesDoBanco);
 		
 		Cliente cliente = gerClientes.pesquisaCliente(1);
-		
-		assertThat(cliente.getId(), is(1));
-		assertThat(cliente.getEmail(), is("gugafarias@gmail.com"));
+			
+		assertEquals(cliente.getId(), 1);
+		assertEquals(cliente.getEmail(), "gugafarias@gmail.com");
 		
 	}
 

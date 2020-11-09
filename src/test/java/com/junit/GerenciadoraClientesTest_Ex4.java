@@ -2,6 +2,7 @@ package com.junit;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class GerenciadoraClientesTest_Ex4 {
 	private GerenciadoraClientes gerClientes;
 
 	/**
-	 * Teste b�sico da pesquisa de um cliente a partir do seu ID.
+	 * Teste básico da pesquisa de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -28,7 +29,7 @@ public class GerenciadoraClientesTest_Ex4 {
 	@Test
 	public void testPesquisaCliente() {
 
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		Cliente cliente01 = new Cliente(1, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
@@ -41,16 +42,16 @@ public class GerenciadoraClientesTest_Ex4 {
 		
 		gerClientes = new GerenciadoraClientes(clientesDoBanco);
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		Cliente cliente = gerClientes.pesquisaCliente(1);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(cliente.getId(), is(1));
 		
 	}
 	
 	/**
-	 * Teste b�sico da remo��o de um cliente a partir do seu ID.
+	 * Teste básico da remoção de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -58,7 +59,7 @@ public class GerenciadoraClientesTest_Ex4 {
 	@Test
 	public void testRemoveCliente() {
 
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		Cliente cliente01 = new Cliente(1, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
@@ -71,10 +72,10 @@ public class GerenciadoraClientesTest_Ex4 {
 		
 		gerClientes = new GerenciadoraClientes(clientesDoBanco);
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean clienteRemovido = gerClientes.removeCliente(2);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(clienteRemovido, is(true));
 		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
 		assertNull(gerClientes.pesquisaCliente(2));

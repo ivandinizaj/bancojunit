@@ -2,6 +2,7 @@ package com.junit;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import org.junit.Test;
  * sobre contas, realizadas pela classe {@link GerenciadoraContas}.
  * 
  * @author Gustavo Farias
- * @date 21/01/2035 
+ * @date 21/01/2035
  */
 public class GerenciadoraContasTest_Ex11 {
 
@@ -30,8 +31,7 @@ public class GerenciadoraContasTest_Ex11 {
 	@Test
 	public void testTransfereValor() {
 
-		/* ========== Montagem do cen�rio ========== */
-		
+		/* ========== Montagem do cenário ========== */
 		// criando alguns clientes
 		int idConta01 = 1;
 		int idConta02 = 2;
@@ -45,18 +45,18 @@ public class GerenciadoraContasTest_Ex11 {
 		
 		gerContas = new GerenciadoraContas(contasDoBanco);
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean sucesso = gerContas.transfereValor(idConta01, 100, idConta02);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertTrue(sucesso);
 		assertThat(conta02.getSaldo(), is(100.0));
 		assertThat(conta01.getSaldo(), is(100.0));
 	}
 	
 	/**
-	 * Teste b�sico da tentativa de transfer�ncia de um valor da conta de um cliente para outro
-	 * quando n�o h� saldo suficiente, mas o saldo � positivo.
+	 * Teste básico da tentativa de transferência de um valor da conta de um cliente para outro
+	 * quando não há saldo suficiente, mas o saldo é positivo.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035

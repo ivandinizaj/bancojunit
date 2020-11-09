@@ -73,7 +73,7 @@ public class Cliente {
 	}
 	
 	/**
-	 * M�todo que retorna o email do cliente. 
+	 * Método que retorna o email do cliente.
 	 * @return email do cliente
 	 */
 	public String getEmail() {
@@ -81,7 +81,7 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que atualiza o email do cliente. 
+	 * Método que atualiza o email do cliente.
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -96,14 +96,14 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que atualiza o status do cliente. 
+	 * Método que atualiza o status do cliente.
 	 */
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
 
 	/**
-	 * M�todo que retorna o ID da conta corrente associada ao cliente. 
+	 * Método que retorna o ID da conta corrente associada ao cliente.
 	 * @return ID da conta corrente associada ao cliente
 	 */
 	public int getIdContaCorrente() {
@@ -111,27 +111,26 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que atualiza o ID da conta corrente associada ao cliente. 
+	 * Método que atualiza o ID da conta corrente associada ao cliente.
 	 */
 	public void setIdContaCorrente(int idContaCorrente) {
 		this.idContaCorrente = idContaCorrente;
 	}
 	
 	/**
-	 * M�todo que retorna a representa��o textual de um cliente. 
-	 * @return representa��o textual de um cliente
+	 * M�todo que retorna a representação textual de um cliente.
+	 * @return representação textual de um cliente
 	 */
 	@Override
 	public String toString() {
-		
-		String str ="=========================" 
+
+		return "========================="
 					+"Id: " + this.id + "\n"
 					+ "Nome: " + this.nome + "\n"
 					+ "Email: " + this.email + "\n"
 					+ "Idade: " + this.idade + "\n"
 					+ "Status: " + (ativo?"Ativo":"Inativo") + "\n"
 					+ "=========================";
-		return str;
 	}
 	
 }

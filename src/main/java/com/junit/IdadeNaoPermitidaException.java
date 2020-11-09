@@ -1,7 +1,7 @@
 package com.junit;
 
 /**
- * Exce��o a ser lan�ada quando a idade de um poss�vel novo cliente n�o for aceita.
+ * Exceção a ser lançada quando a idade de um possível novo cliente não for aceita.
  * 
  * @author Gustavo Farias
  */

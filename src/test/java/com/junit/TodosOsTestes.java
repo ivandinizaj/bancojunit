@@ -16,20 +16,6 @@ public class TodosOsTestes {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
   @SuiteClasses({ GerenciadoraClientesTest_Ex1.class, GerenciadoraClientesTest_Ex2.class,
 	GerenciadoraClientesTest_Ex3.class, GerenciadoraClientesTest_Ex4.class, GerenciadoraClientesTest_Ex5.class,

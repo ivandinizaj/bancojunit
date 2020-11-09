@@ -2,6 +2,7 @@ package com.junit;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe de teste criada para garantir o funcionamento das principais opera��es
+ * Classe de teste criada para garantir o funcionamento das principais operaçõses
  * sobre clientes, realizadas pela classe {@link GerenciadoraClientes}.
  * 
  * @author Gustavo Farias
@@ -26,7 +27,7 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Before
 	public void setUp() {
 	
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		Cliente cliente01 = new Cliente(idCLiente01, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
@@ -46,7 +47,7 @@ public class GerenciadoraClientesTest_Ex10 {
 	}
 	
 	/**
-	 * Teste b�sico da pesquisa de um cliente a partir do seu ID.
+	 * Teste básico da pesquisa de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -54,16 +55,16 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testPesquisaCliente() {
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(cliente.getId(), is(idCLiente01));
 		
 	}
 	
 	/**
-	 * Teste b�sico da pesquisa por um cliente que n�o existe.
+	 * Teste básico da pesquisa por um cliente que não existe.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -71,16 +72,16 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testPesquisaClienteInexistente() {
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		Cliente cliente = gerClientes.pesquisaCliente(1001);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertNull(cliente);
 		
 	}
 	
 	/**
-	 * Teste b�sico da remo��o de um cliente a partir do seu ID.
+	 * Teste b�sico da remoção de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -88,10 +89,10 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testRemoveCliente() {
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean clienteRemovido = gerClientes.removeCliente(idCLiente02);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(clienteRemovido, is(true));
 		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
 		assertNull(gerClientes.pesquisaCliente(idCLiente02));
@@ -99,7 +100,7 @@ public class GerenciadoraClientesTest_Ex10 {
 	}
 	
 	/**
-	 * Teste da tentativa de remo��o de um cliente inexistente.
+	 * Teste da tentativa de remoção de um cliente inexistente.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -108,17 +109,17 @@ public class GerenciadoraClientesTest_Ex10 {
 	public void testRemoveClienteInexistente() {
 
 	
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean clienteRemovido = gerClientes.removeCliente(1001);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(clienteRemovido, is(false));
 		assertThat(gerClientes.getClientesDoBanco().size(), is(2));
 		
 	}
 	
 	/**
-	 * Valida��o da idade de um cliente quando a mesma est� no intervalo permitido.
+	 * Validação da idade de um cliente quando a mesma está no intervalo permitido.
 	 * 
 	 * @author Gustavo Farias
 	 * @throws IdadeNaoPermitidaException 
@@ -127,18 +128,18 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testClienteIdadeAceitavel() throws IdadeNaoPermitidaException {
 
-		/* ========== Montagem do Cen�rio ========== */		
+		/* ========== Montagem do Cenário ========== */
 		Cliente cliente = new Cliente(1, "Gustavo", 25, "guga@gmail.com", 1, true);
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean idadeValida = gerClientes.validaIdade(cliente.getIdade());
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertTrue(idadeValida);	
 	}
 	
 	/**
-	 * Valida��o da idade de um cliente quando a mesma est� no intervalo permitido.
+	 * Validação da idade de um cliente quando a mesma est� no intervalo permitido.
 	 * 
 	 * @author Gustavo Farias
 	 * @throws IdadeNaoPermitidaException 
@@ -147,18 +148,18 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testClienteIdadeAceitavel_02() throws IdadeNaoPermitidaException {
 
-		/* ========== Montagem do Cen�rio ========== */		
+		/* ========== Montagem do Cenário ========== */
 		Cliente cliente = new Cliente(1, "Gustavo", 18, "guga@gmail.com", 1, true);
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean idadeValida = gerClientes.validaIdade(cliente.getIdade());
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertTrue(idadeValida);	
 	}
 	
 	/**
-	 * Valida��o da idade de um cliente quando a mesma est� no intervalo permitido.
+	 * Validação da idade de um cliente quando a mesma está no intervalo permitido.
 	 * 
 	 * @author Gustavo Farias
 	 * @throws IdadeNaoPermitidaException 
@@ -167,18 +168,18 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testClienteIdadeAceitavel_03() throws IdadeNaoPermitidaException {
 
-		/* ========== Montagem do Cen�rio ========== */		
+		/* ========== Montagem do Cenário ========== */
 		Cliente cliente = new Cliente(1, "Gustavo", 65, "guga@gmail.com", 1, true);
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean idadeValida = gerClientes.validaIdade(cliente.getIdade());
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertTrue(idadeValida);	
 	}
 	
 	/**
-	 * Valida��o da idade de um cliente quando a mesma est� abaixo intervalo permitido.
+	 * Validação da idade de um cliente quando a mesma está abaixo intervalo permitido.
 	 * 
 	 * @author Gustavo Farias
 	 * @throws IdadeNaoPermitidaException 
@@ -187,21 +188,21 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testClienteIdadeAceitavel_04() throws IdadeNaoPermitidaException {
 
-		/* ========== Montagem do Cen�rio ========== */		
+		/* ========== Montagem do Cenário ========== */
 		Cliente cliente = new Cliente(1, "Gustavo", 17, "guga@gmail.com", 1, true);
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		try {
 			gerClientes.validaIdade(cliente.getIdade());
 			fail();
 		} catch (Exception e) {
-			/* ========== Verifica��es ========== */
+			/* ========== Verificações ========== */
 			assertThat(e.getMessage(), is(IdadeNaoPermitidaException.MSG_IDADE_INVALIDA));
 		}	
 	}
 	
 	/**
-	 * Valida��o da idade de um cliente quando a mesma est� acima intervalo permitido.
+	 * Validação da idade de um cliente quando a mesma est� acima intervalo permitido.
 	 * 
 	 * @author Gustavo Farias
 	 * @throws IdadeNaoPermitidaException 
@@ -210,14 +211,14 @@ public class GerenciadoraClientesTest_Ex10 {
 	@Test
 	public void testClienteIdadeAceitavel_05() throws IdadeNaoPermitidaException {
 		
-		/* ========== Montagem do Cen�rio ========== */		
+		/* ========== Montagem do Cenário ========== */
 		Cliente cliente = new Cliente(1, "Gustavo", 66, "guga@gmail.com", 1, true);
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		try {
 			gerClientes.validaIdade(cliente.getIdade());
 			fail();
 		} catch (Exception e) {
-			/* ========== Verifica��es ========== */
+			/* ========== Verificações ========== */
 			assertThat(e.getMessage(), is(IdadeNaoPermitidaException.MSG_IDADE_INVALIDA));
 		}	
 	}

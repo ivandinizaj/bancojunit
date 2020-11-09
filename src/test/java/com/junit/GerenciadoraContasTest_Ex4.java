@@ -2,6 +2,7 @@ package com.junit;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class GerenciadoraContasTest_Ex4 {
 	@Test
 	public void testTransfereValor() {
 
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		ContaCorrente conta01 = new ContaCorrente(1, 200, true);
@@ -43,14 +44,12 @@ public class GerenciadoraContasTest_Ex4 {
 		
 		gerContas = new GerenciadoraContas(contasDoBanco);
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean sucesso = gerContas.transfereValor(1, 100, 2);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertTrue(sucesso);
 		assertThat(conta02.getSaldo(), is(100.0));
 	}
 
 }
-
-// Documenta��o e coment�rios

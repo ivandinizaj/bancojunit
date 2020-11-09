@@ -2,7 +2,7 @@ package com.junit;
 
 /**
  * Classe {@link ContaCorrente} que representa uma conta corrente real
- * e que poder� ser associada a um cliente.
+ * e que poderá ser associada a um cliente.
  * @author Gustavo Farias
  */
 public class ContaCorrente {
@@ -20,7 +20,7 @@ public class ContaCorrente {
 	}
 
 	/**
-	 * M�todo que retorna o ID da conta corrente. 
+	 * Método que retorna o ID da conta corrente. 
 	 * @return ID da conta corrente
 	 */
 	public int getId() {

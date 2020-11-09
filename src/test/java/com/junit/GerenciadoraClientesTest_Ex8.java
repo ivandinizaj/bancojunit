@@ -2,6 +2,7 @@ package com.junit;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class GerenciadoraClientesTest_Ex8 {
 	@Before
 	public void setUp() {
 	
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		Cliente cliente01 = new Cliente(idCLiente01, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
@@ -39,9 +40,9 @@ public class GerenciadoraClientesTest_Ex8 {
 		
 		gerClientes = new GerenciadoraClientes(clientesDoBanco);
 	
-		// a) Abriu conex�o com o BD? Ent�o...
-		// b) Criou arquivos e pastas aqui? Ent�o...
-		// c) Inseriu clientes fict�cios na base de dados especificamente para os testes desta classe? Ent�o...
+		// a) Abriu conexão com o BD? Então...
+		// b) Criou arquivos e pastas aqui? Então...
+		// c) Inseriu clientes fictícios na base de dados especificamente para os testes desta classe? Então...
 	}
 
 	@After
@@ -54,7 +55,7 @@ public class GerenciadoraClientesTest_Ex8 {
 	}
 	
 	/**
-	 * Teste b�sico da pesquisa de um cliente a partir do seu ID.
+	 * Teste básico da pesquisa de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -62,16 +63,16 @@ public class GerenciadoraClientesTest_Ex8 {
 	@Test
 	public void testPesquisaCliente() {
 
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(cliente.getId(), is(idCLiente01));
 		
 	}
 	
 	/**
-	 * Teste b�sico da remo��o de um cliente a partir do seu ID.
+	 * Teste básico da remoção de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -79,10 +80,10 @@ public class GerenciadoraClientesTest_Ex8 {
 	@Test
 	public void testRemoveCliente() {
 		
-		/* ========== Execu��o ========== */
+		/* ========== Execução ========== */
 		boolean clienteRemovido = gerClientes.removeCliente(idCLiente02);
 		
-		/* ========== Verifica��es ========== */
+		/* ========== Verificações ========== */
 		assertThat(clienteRemovido, is(true));
 		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
 		assertNull(gerClientes.pesquisaCliente(idCLiente02));
@@ -90,4 +91,4 @@ public class GerenciadoraClientesTest_Ex8 {
 	}
 	
 }
-// A Independ�ncia do Teste
+// A Independência do Teste

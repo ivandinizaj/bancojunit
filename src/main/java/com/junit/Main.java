@@ -11,7 +11,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		inicializaSistemaBancario(); // criando algumas contas e clientes fict�cios
+		inicializaSistemaBancario(); // criando algumas contas e clientes fictícios
 		
 		Scanner sc = new Scanner(System.in);
 		boolean continua = true;
@@ -32,7 +32,7 @@ public class Main {
 				if(cliente != null)
 					System.out.println(cliente.toString());
 				else
-					System.out.println("Cliente n�o encontrado!");
+					System.out.println("Cliente não encontrado!");
 				
 				pulalinha();
 				break;
@@ -46,7 +46,7 @@ public class Main {
 				if(conta != null)
 					System.out.println(conta.toString());
 				else
-					System.out.println("Conta n�o encontrado!");
+					System.out.println("Conta não encontrado!");
 				
 				pulalinha();
 				break;
@@ -63,7 +63,7 @@ public class Main {
 					System.out.println("Cliente ativado com sucesso!");
 				}
 				else
-					System.out.println("Cliente n�o encontrado!");
+					System.out.println("Cliente não encontrado!");
 			
 				pulalinha();
 				break;
@@ -80,7 +80,7 @@ public class Main {
 					System.out.println("Cliente desativado com sucesso!");
 				}
 				else
-					System.out.println("Cliente n�o encontrado!");
+					System.out.println("Cliente não encontrado!");
 				
 				pulalinha();
 				break;
@@ -102,7 +102,6 @@ public class Main {
 			} 
 			
 		}
-	
 		
 	}
 
@@ -111,7 +110,7 @@ public class Main {
 	}
 
 	/**
-	 * Imprime menu de op��es do nosso sistema banc�rio
+	 * Imprime menu de opções do nosso sistema bancário
 	 */
 	private static void printMenu() {
 		
@@ -127,7 +126,7 @@ public class Main {
 
 	/**
 	 * Método que cria e insere algumas contas e clientes no sistema do banco,
-	 * apenas para realização de testes manuais atrav�s do m�todo main acima.
+	 * apenas para realização de testes manuais através do método main acima.
 	 */
 	private static void inicializaSistemaBancario() {
 		// criando lista vazia de contas e clientes
@@ -151,6 +150,4 @@ public class Main {
 		gerContas = new GerenciadoraContas(contasDoBanco);
 		
 	}
-	
 }
-
