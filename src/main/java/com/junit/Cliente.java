@@ -28,7 +28,7 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que retorna o ID do cliente. 
+	 * Método que retorna o ID do cliente.
 	 * @return ID do cliente
 	 */
 	public int getId() {
@@ -36,14 +36,14 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que atualiza o ID do cliente. 
+	 * Método que atualiza o ID do cliente.
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 	
 	/**
-	 * M�todo que retorna o nome do cliente. 
+	 * Método que retorna o nome do cliente.
 	 * @return nome do cliente
 	 */
 	public String getNome() {
@@ -51,14 +51,14 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que atualiza o nome do cliente. 
+	 * Método que atualiza o nome do cliente.
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
 	/**
-	 * M�todo que retorna a idade do cliente. 
+	 * Método que retorna a idade do cliente.
 	 * @return idade do cliente
 	 */
 	public int getIdade() {
@@ -66,7 +66,7 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que atualiza a idade do cliente. 
+	 * Método que atualiza a idade do cliente.
 	 */
 	public void setIdade(int idade) {
 		this.idade = idade;
@@ -88,7 +88,7 @@ public class Cliente {
 	}
 
 	/**
-	 * M�todo que retorna o status (Ativo ou Inativo) do cliente. 
+	 * Método que retorna o status (Ativo ou Inativo) do cliente.
 	 * @return status do cliente
 	 */
 	public boolean isAtivo() {
@@ -118,7 +118,7 @@ public class Cliente {
 	}
 	
 	/**
-	 * M�todo que retorna a representação textual de um cliente.
+	 * Método que retorna a representação textual de um cliente.
 	 * @return representação textual de um cliente
 	 */
 	@Override

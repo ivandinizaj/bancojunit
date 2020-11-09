@@ -25,7 +25,7 @@ public class GerenciadoraContas {
 	/**
 	 * Pesquisa por uma conta a partir do seu ID.
 	 * @param idConta id da conta a ser pesquisada
-	 * @return a conta pesquisada ou null, caso n�o seja encontrada
+	 * @return a conta pesquisada ou null, caso não seja encontrada
 	 */
 	public ContaCorrente pesquisaConta (int idConta) {
 
@@ -47,7 +47,7 @@ public class GerenciadoraContas {
 	/**
 	 * Remove conta da lista de contas do banco.
 	 * @param idConta ID da conta a ser removida 
-	 * @return true se a conta foi removida. False, caso contr�rio.
+	 * @return true se a conta foi removida. False, caso contrário.
 	 */
 	public boolean removeConta (int idConta) {
 		
@@ -87,7 +87,7 @@ public class GerenciadoraContas {
 	
 	/**
 	 * Transfere um determinado valor de uma conta Origem para uma conta Destino.
-	 * Caso n�o haja saldo suficiente, o valor não será transferido.
+	 * Caso não haja saldo suficiente, o valor não será transferido.
 	 * 
 	 * @param idContaOrigem conta que terá o valor deduzido
 	 * @param valor valor a ser transferido

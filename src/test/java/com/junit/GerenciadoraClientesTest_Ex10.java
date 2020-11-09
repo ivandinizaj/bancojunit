@@ -1,15 +1,13 @@
 package com.junit;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Classe de teste criada para garantir o funcionamento das principais operaçõses
@@ -24,7 +22,7 @@ public class GerenciadoraClientesTest_Ex10 {
 	private int idCLiente01 = 1;
 	private	int idCLiente02 = 2;
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
 	
 		/* ========== Montagem do cenário ========== */
@@ -41,7 +39,7 @@ public class GerenciadoraClientesTest_Ex10 {
 		gerClientes = new GerenciadoraClientes(clientesDoBanco);
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() {
 		gerClientes.limpa();
 	}
@@ -59,7 +57,7 @@ public class GerenciadoraClientesTest_Ex10 {
 		Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
 		
 		/* ========== Verificações ========== */
-		assertThat(cliente.getId(), is(idCLiente01));
+		assertEquals(cliente.getId(), idCLiente01);
 		
 	}
 	
@@ -81,7 +79,7 @@ public class GerenciadoraClientesTest_Ex10 {
 	}
 	
 	/**
-	 * Teste b�sico da remoção de um cliente a partir do seu ID.
+	 * Teste básico da remoção de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -93,8 +91,8 @@ public class GerenciadoraClientesTest_Ex10 {
 		boolean clienteRemovido = gerClientes.removeCliente(idCLiente02);
 		
 		/* ========== Verificações ========== */
-		assertThat(clienteRemovido, is(true));
-		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
+		assertTrue(clienteRemovido);
+		assertEquals(gerClientes.getClientesDoBanco().size(), 1);
 		assertNull(gerClientes.pesquisaCliente(idCLiente02));
 		
 	}
@@ -113,8 +111,8 @@ public class GerenciadoraClientesTest_Ex10 {
 		boolean clienteRemovido = gerClientes.removeCliente(1001);
 		
 		/* ========== Verificações ========== */
-		assertThat(clienteRemovido, is(false));
-		assertThat(gerClientes.getClientesDoBanco().size(), is(2));
+		assertFalse(clienteRemovido);
+		assertEquals(gerClientes.getClientesDoBanco().size(), 2);
 		
 	}
 	
@@ -139,7 +137,7 @@ public class GerenciadoraClientesTest_Ex10 {
 	}
 	
 	/**
-	 * Validação da idade de um cliente quando a mesma est� no intervalo permitido.
+	 * Validação da idade de um cliente quando a mesma está no intervalo permitido.
 	 * 
 	 * @author Gustavo Farias
 	 * @throws IdadeNaoPermitidaException 
@@ -197,12 +195,12 @@ public class GerenciadoraClientesTest_Ex10 {
 			fail();
 		} catch (Exception e) {
 			/* ========== Verificações ========== */
-			assertThat(e.getMessage(), is(IdadeNaoPermitidaException.MSG_IDADE_INVALIDA));
+			assertEquals(e.getMessage(), IdadeNaoPermitidaException.MSG_IDADE_INVALIDA);
 		}	
 	}
 	
 	/**
-	 * Validação da idade de um cliente quando a mesma est� acima intervalo permitido.
+	 * Validação da idade de um cliente quando a mesma está acima intervalo permitido.
 	 * 
 	 * @author Gustavo Farias
 	 * @throws IdadeNaoPermitidaException 
@@ -219,7 +217,7 @@ public class GerenciadoraClientesTest_Ex10 {
 			fail();
 		} catch (Exception e) {
 			/* ========== Verificações ========== */
-			assertThat(e.getMessage(), is(IdadeNaoPermitidaException.MSG_IDADE_INVALIDA));
+			assertEquals(e.getMessage(), IdadeNaoPermitidaException.MSG_IDADE_INVALIDA);
 		}	
 	}
 	

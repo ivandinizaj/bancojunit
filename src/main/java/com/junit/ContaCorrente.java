@@ -28,14 +28,14 @@ public class ContaCorrente {
 	}
 
 	/**
-	 * M�todo que atualiza o ID da conta corrente. 
+	 * Método que atualiza o ID da conta corrente.
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
 	/**
-	 * M�todo que retorna o saldo da conta corrente. 
+	 * Método que retorna o saldo da conta corrente.
 	 * @return saldo da conta corrente
 	 */
 	public double getSaldo() {
@@ -43,14 +43,14 @@ public class ContaCorrente {
 	}
 
 	/**
-	 * M�todo que atualiza o saldo da conta corrente. 
+	 * Método que atualiza o saldo da conta corrente.
 	 */
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 
 	/**
-	 * M�todo que retorna o status da conta corrente, podendo ser Ativa ou Inativa. 
+	 * Método que retorna o status da conta corrente, podendo ser Ativa ou Inativa.
 	 * @return status da conta corrente
 	 */
 	public boolean isAtiva() {
@@ -58,15 +58,15 @@ public class ContaCorrente {
 	}
 
 	/**
-	 * M�todo que atualiza o status da conta corrente. 
+	 * Método que atualiza o status da conta corrente.
 	 */
 	public void setAtiva(boolean ativa) {
 		this.ativa = ativa;
 	}
 	
 	/**
-	 * M�todo que retorna a representa��o textual de uma conta corrente. 
-	 * @return representa��o textual da conta corrente
+	 * Método que retorna a representação textual de uma conta corrente.
+	 * @return representação textual da conta corrente
 	 */
 	@Override
 	public String toString() {

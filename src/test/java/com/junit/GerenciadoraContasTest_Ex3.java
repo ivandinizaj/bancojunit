@@ -1,12 +1,11 @@
 package com.junit;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GerenciadoraContasTest_Ex3 {
 
@@ -15,7 +14,7 @@ public class GerenciadoraContasTest_Ex3 {
 	@Test
 	public void testTransfereValor() {
 
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		ContaCorrente conta01 = new ContaCorrente(1, 200, true);
@@ -32,8 +31,8 @@ public class GerenciadoraContasTest_Ex3 {
 		gerContas.transfereValor(1, 100, 2);
 		
 		/* ========== Verificações ========== */
-		assertThat(conta02.getSaldo(), is(100.0));
-		assertThat(conta01.getSaldo(), is(100.0));
+		assertEquals(conta02.getSaldo(), 100.0);
+		assertEquals(conta01.getSaldo(), 100.0);
 	}
 
 }

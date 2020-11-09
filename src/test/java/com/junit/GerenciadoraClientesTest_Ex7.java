@@ -1,18 +1,17 @@
 package com.junit;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Classe de teste criada para garantir o funcionamento das principais opera��es
+ * Classe de teste criada para garantir o funcionamento das principais operações
  * sobre clientes, realizadas pela classe {@link GerenciadoraClientes}.
  * 
  * @author Gustavo Farias
@@ -24,10 +23,9 @@ public class GerenciadoraClientesTest_Ex7 {
 	private int idCLiente01 = 1;
 	private	int idCLiente02 = 2;
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
-	
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		Cliente cliente01 = new Cliente(idCLiente01, "Gustavo Farias", 31, "gugafarias@gmail.com", 1, true);
@@ -43,7 +41,7 @@ public class GerenciadoraClientesTest_Ex7 {
 //		System.out.println("Before foi executado");
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() {
 		gerClientes.limpa();
 		
@@ -63,12 +61,12 @@ public class GerenciadoraClientesTest_Ex7 {
 		Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
 		
 		/* ========== Verificacões ========== */
-		assertThat(cliente.getId(), is(idCLiente01));
+		assertEquals(cliente.getId(), idCLiente01);
 		
 	}
 	
 	/**
-	 * Teste b�sico da remo��o de um cliente a partir do seu ID.
+	 * Teste básico da remoção de um cliente a partir do seu ID.
 	 * 
 	 * @author Gustavo Farias
 	 * @date 21/01/2035
@@ -80,11 +78,11 @@ public class GerenciadoraClientesTest_Ex7 {
 		boolean clienteRemovido = gerClientes.removeCliente(idCLiente02);
 		
 		/* ========== Verificações ========== */
-		assertThat(clienteRemovido, is(true));
-		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
+		assertTrue(clienteRemovido);
+		assertEquals(gerClientes.getClientesDoBanco().size(), 1);
 		assertNull(gerClientes.pesquisaCliente(idCLiente02));
 		
 	}
 	
 }
-// Como Ganhar Tempo e Otimizar Testes com Cen�rios Parecidos
+// Como Ganhar Tempo e Otimizar Testes com cenários Parecidos

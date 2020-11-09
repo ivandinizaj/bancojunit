@@ -1,16 +1,14 @@
 package com.junit;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Classe de teste criada para garantir o funcionamento das principais opera��es
+ * Classe de teste criada para garantir o funcionamento das principais operações
  * sobre contas, realizadas pela classe {@link GerenciadoraContas}.
  * 
  * @author Gustavo Farias
@@ -21,8 +19,8 @@ public class GerenciadoraContasTest_Ex6 {
 	private GerenciadoraContas gerContas;
 	
 	/**
-	 * Teste b�sico da transfer�ncia de um valor da conta de um cliente para outro,
-	 * estando ambos os clientes ativos e havendo saldo suficiente para tal transfer�ncia
+	 * Teste básico da transferência de um valor da conta de um cliente para outro,
+	 * estando ambos os clientes ativos e havendo saldo suficiente para tal transferência
 	 * ocorrer com sucesso.
 	 * 
 	 * @author Gustavo Farias
@@ -31,7 +29,7 @@ public class GerenciadoraContasTest_Ex6 {
 	@Test
 	public void testTransfereValor() {
 
-		/* ========== Montagem do cen�rio ========== */
+		/* ========== Montagem do cenário ========== */
 		
 		// criando alguns clientes
 		int idConta01 = 1;
@@ -51,8 +49,8 @@ public class GerenciadoraContasTest_Ex6 {
 		
 		/* ========== Verificações ========== */
 		assertTrue(sucesso);
-		assertThat(conta02.getSaldo(), is(100.0));
-		assertThat(conta01.getSaldo(), is(100.0));
+		assertEquals(conta02.getSaldo(), 100.0);
+		assertEquals(conta01.getSaldo(), 100.0);
 	}
 	
 	/**
@@ -85,9 +83,9 @@ public class GerenciadoraContasTest_Ex6 {
 		
 		/* ========== Verificações ========== */
 		assertTrue(sucesso);
-		assertThat(conta01.getSaldo(), is(-100.0));
-		assertThat(conta02.getSaldo(), is(200.0));
+		assertEquals(conta01.getSaldo(), -100.0);
+		assertEquals(conta02.getSaldo(), 200.0);
 	}
 
 }
-//Manuten��o de Testes
+//Manutenção de Testes

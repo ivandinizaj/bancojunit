@@ -1,18 +1,16 @@
 package com.junit;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Classe de teste criada para garantir o funcionamento das principais opera��es
+ * Classe de teste criada para garantir o funcionamento das principais operações
  * sobre clientes, realizadas pela classe {@link GerenciadoraClientes}.
  * 
  * @author Gustavo Farias
@@ -24,7 +22,7 @@ public class GerenciadoraClientesTest_Ex8 {
 	private int idCLiente01 = 1;
 	private	int idCLiente02 = 2;
 	
-	@Before
+	@BeforeEach
 	public void setUp() {
 	
 		/* ========== Montagem do cenário ========== */
@@ -45,7 +43,7 @@ public class GerenciadoraClientesTest_Ex8 {
 		// c) Inseriu clientes fictícios na base de dados especificamente para os testes desta classe? Então...
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() {
 		gerClientes.limpa();
 		
@@ -67,7 +65,7 @@ public class GerenciadoraClientesTest_Ex8 {
 		Cliente cliente = gerClientes.pesquisaCliente(idCLiente01);
 		
 		/* ========== Verificações ========== */
-		assertThat(cliente.getId(), is(idCLiente01));
+		assertEquals(cliente.getId(), idCLiente01);
 		
 	}
 	
@@ -84,8 +82,8 @@ public class GerenciadoraClientesTest_Ex8 {
 		boolean clienteRemovido = gerClientes.removeCliente(idCLiente02);
 		
 		/* ========== Verificações ========== */
-		assertThat(clienteRemovido, is(true));
-		assertThat(gerClientes.getClientesDoBanco().size(), is(1));
+		assertTrue(clienteRemovido);
+		assertEquals(gerClientes.getClientesDoBanco().size(), 1);
 		assertNull(gerClientes.pesquisaCliente(idCLiente02));
 		
 	}

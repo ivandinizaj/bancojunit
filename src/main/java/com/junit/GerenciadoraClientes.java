@@ -47,7 +47,7 @@ public class GerenciadoraClientes {
 	/**
 	 * Remove cliente da lista de clientes do banco.
 	 * @param idCliente ID do cliente a ser removido 
-	 * @return true se o cliente foi removido. False, caso contr�rio.
+	 * @return true se o cliente foi removido. False, caso contrário.
 	 */
 	public boolean removeCliente (int idCliente) {
 		boolean clienteRemovido = false;
@@ -66,7 +66,7 @@ public class GerenciadoraClientes {
 
 	/**
 	 * Informa se um determinado cliente está ativo ou não.
-	 * @param idCliente ID do cliente cujo status ser� verificado
+	 * @param idCliente ID do cliente cujo status será verificado
 	 * @return true se o cliente está ativo. False, caso contrário.
 	 */
 	public boolean clienteAtivo (int idCliente) {
@@ -92,8 +92,8 @@ public class GerenciadoraClientes {
 	}
 	
 	/**
-	 * Valida se a idade do cliente est� dentro do intervalo permitido (18 - 65).
-	 * @param idade a idade do poss�vel novo cliente
+	 * Valida se a idade do cliente está dentro do intervalo permitido (18 - 65).
+	 * @param idade a idade do possível novo cliente
 	 */
 	public boolean validaIdade(int idade) throws IdadeNaoPermitidaException {
 	
