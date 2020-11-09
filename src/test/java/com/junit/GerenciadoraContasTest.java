@@ -35,8 +35,8 @@ public class GerenciadoraContasTest {
 
         /* ========== Verificações ========== */
         assertTrue(sucesso);
-        assertEquals(conta01.getSaldo(), quantiaFinalConta1);
-        assertEquals(conta02.getSaldo(), quantiaFinalConta2);
+        assertEquals(quantiaFinalConta1, conta01.getSaldo());
+        assertEquals(quantiaFinalConta2, conta02.getSaldo());
     }
 
     @ParameterizedTest
@@ -63,8 +63,8 @@ public class GerenciadoraContasTest {
 
         /* ========== Verificações ========== */
         assertTrue(sucesso);
-        assertEquals(conta01.getSaldo(), quantiaFinalConta1);
-        assertEquals(conta02.getSaldo(), quantiaFinalConta2);
+        assertEquals(quantiaFinalConta1, conta01.getSaldo());
+        assertEquals(quantiaFinalConta2, conta02.getSaldo());
     }
 
     @ParameterizedTest
@@ -91,8 +91,8 @@ public class GerenciadoraContasTest {
 
         /* ========== Verificações ========== */
         assertTrue(sucesso);
-        assertEquals(conta01.getSaldo(), quantiaFinalConta1);
-        assertEquals(conta02.getSaldo(), quantiaFinalConta2);
+        assertEquals(quantiaFinalConta1, conta01.getSaldo());
+        assertEquals(quantiaFinalConta2, conta02.getSaldo());
     }
 
     @ParameterizedTest
@@ -119,7 +119,7 @@ public class GerenciadoraContasTest {
 
         /* ========== Verificações ========== */
         assertTrue(sucesso);
-        assertEquals(conta01.getSaldo(), quantiaFinalConta1);
-        assertEquals(conta02.getSaldo(), quantiaFinalConta2);
+        assertEquals(quantiaFinalConta1, conta01.getSaldo());
+        assertEquals(quantiaFinalConta2, conta02.getSaldo());
     }
 }

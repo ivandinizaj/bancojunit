@@ -45,8 +45,8 @@ public class GerenciadoraClientesTest {
         Cliente cliente = gerClientes.pesquisaCliente(1);
 
         /* ========== Verificações ========== */
-        assertEquals(cliente.getId(), 1);
-        assertEquals(cliente.getEmail(), "gugafarias@gmail.com");
+        assertEquals(1, cliente.getId());
+        assertEquals("gugafarias@gmail.com", cliente.getEmail());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class GerenciadoraClientesTest {
 
         /* ========== Verificações ========== */
         assertTrue(clienteRemovido);
-        assertEquals(gerClientes.getClientesDoBanco().size(), 1);
+        assertEquals(1, gerClientes.getClientesDoBanco().size());
         assertNull(gerClientes.pesquisaCliente(2));
     }
 
@@ -79,7 +79,7 @@ public class GerenciadoraClientesTest {
 
         /* ========== Verificações ========== */
         assertFalse(clienteRemovido);
-        assertEquals(gerClientes.getClientesDoBanco().size(), 2);
+        assertEquals(2, gerClientes.getClientesDoBanco().size());
     }
 
     @ParameterizedTest
@@ -109,7 +109,7 @@ public class GerenciadoraClientesTest {
             fail("Não foi validado idade inaceitável");
         } catch (Exception e) {
             /* ========== Verificações ========== */
-            assertEquals(e.getMessage(), IdadeNaoPermitidaException.MSG_IDADE_INVALIDA);
+            assertEquals(IdadeNaoPermitidaException.MSG_IDADE_INVALIDA, e.getMessage());
         }
     }
 }
